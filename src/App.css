@@ -1,3 +1,20 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .main {
   width: 100vw;
   height: 100vh;
@@ -5,132 +22,192 @@
   justify-content: center;
   align-items: center;
 }
-.card {
+.square {
   width: 476px;
-  height: 492.74px;
-  height: 588.74px;
-  margin: 40px;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 30px;
+  height: 589px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.contentForm {
-  height: 394px;
+.square > * {
+  padding: 0 40px;
 }
-.text h1 {
+.login-card_logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+.login-card_content {
+  margin-bottom: 24px;
+}
+.login-card_content h1 {
   color: #303030;
   font-size: 24px;
   font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  margin-bottom: 2px;
+  margin: 0;
 }
-.text h3 {
+.login-card_content h3 {
   color: #616161;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 550;
+  line-height: 20px;
+  margin: 0;
 }
 .form {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
-.form input {
+.emailBox {
+  display: flex;
+  flex-direction: column;
+}
+.emailBox label {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.emailBox input {
+  font-weight: 450;
   border-radius: 8px;
-  border: 1px solid #1a1a1a;
+  border-color: #1a1a1a;
+  min-width: 75px;
+  max-height: 2.5rem;
+  line-height: 20px;
   color: #303030;
   padding: 0.5rem 0.75rem;
   outline: none;
+  appearance: none;
 }
-.form input:focus {
-  outline: 1px solid #005bd3;
+.emailBox input:focus {
+  box-shadow: unset;
+  outline: 2px solid #005bd3;
   outline-offset: 1px;
+  transition: outline-offset 0.75ms linear;
+  background-color: #f3f3f3;
 }
-.emailButton {
-  height: 44px;
-  background-color: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.07) 80%,
-    rgba(255, 255, 255, 0.15) 100%
-  );
-  background-color: #303030;
-  font-size: 16px;
-  border-radius: 9px;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-}
-.emailButton:hover {
-  background-color: #1a1a1a;
-}
-.passkey {
-  font-size: 14px;
-  font-weight: 500;
-  /* margin-top: 4px; */
-  border: none;
-  background-color: none;
-  border-radius: 9px;
-  padding: 12px 16px;
-  outline: none;
-  cursor: pointer;
+button {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  margin-top: 8px;
+  background-color: 75ms cubic-bezier(0.19, 0.91, 0.38, 1);
+  min-height: 32px;
+  min-width: 32px;
+  padding: 12px 16px;
+  background-color: #303030;
+  color: #fff;
+  border: none;
+  border-width: 0;
+  border-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0px 3px 1px -1px rgba(26, 26, 26, 0.07);
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 20px;
+  transition: background-color 0.75s linear;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.rightArrow {
+  opacity: 0;
+}
+
+button:hover {
+  background-color: #1a1a1a;
+}
+button:hover .rightArrow {
+  opacity: 1;
+}
+form button:active {
+  background-color: #1a1a1a;
+  box-shadow: inset 0px -1px 0px #cccccc, inset 1px 0px 0px #ebebeb,
+    inset -1px 0px 0px #ebebeb, inset 0px 1px 0px #ebebeb;
+  opacity: 1;
+}
+form button:active .rightArrow {
+  opacity: 1;
+}
+form button span {
+  width: 20px;
+  height: 20px;
+}
+.passkey {
+  background-color: #fff;
+  color: #303030;
+  box-shadow: none;
+  width: 100%;
+  display: flex;
   justify-content: center;
 }
 .passkey:hover {
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.08);
 }
-.sideways {
-  width: 100%;
+.divider {
+  width: 70%;
   text-align: center;
   border-bottom: 1px solid #e3e3e3;
   line-height: 0.1em;
+  margin: 20px auto;
 }
-.sideways span {
+.divider span {
   background-color: white;
-  padding: 0 10px;
-  font-size: 13px;
-}
-.icons {
-  display: flex;
-  gap: 20px;
-}
-.iconContainer {
-  width: 122px;
-  height: 40px;
-  background-color: #f1f1f1;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-}
-.newTo {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.newTo h3 {
-  color: #303030;
-  font-size: 13px;
+  color: #616161;
+  padding: 0 11px;
+  font-size: 14px;
   font-weight: 450;
 }
-.newTo a {
+.socialMediaContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.socialMedia {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.getStarted {
+  font-size: 13px;
+  font-weight: 450;
+  line-height: 20px;
+  margin-top: 32px;
+  color: #303030;
+
+  display: flex;
+  align-items: center;
+}
+.getStarted span {
+  margin-right: 2px;
+}
+.getStarted a {
   text-decoration: none;
   color: #005bd3;
-  font-size: 13px;
 }
-.newTo a:hover {
-  padding-right: 4px;
+.getStarted a {
+  display: flex;
+  align-items: center;
 }
-.bottomLinks a {
+.getStarted a span svg path {
+  fill: #002e6a;
+}
+footer div a {
   color: #616161;
   font-size: 12px;
   font-weight: 450;
+  line-height: 16px;
   margin-right: 8px;
   text-decoration: none;
 }
-.bottomLinks a:hover {
+footer div a:hover {
   text-decoration: underline;
 }
